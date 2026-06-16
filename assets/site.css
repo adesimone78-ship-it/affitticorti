@@ -1,0 +1,166 @@
+/* ============================================================
+   AffittiBrevi.it — Shared site stylesheet
+   Loaded by every page. Per-page styles go inline (page-scoped).
+   ============================================================ */
+
+/* ---------- Reset ---------- */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size:16px;line-height:1.6;color:var(--c-ink);background:#fff;
+  -webkit-font-smoothing:antialiased;padding-bottom:90px;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0;background:none}
+input,select,textarea{font:inherit}
+
+/* ---------- Design tokens (union of all pages) ---------- */
+:root{
+  --c-bg:#ffffff;
+  --c-ink:#0b1a2b;
+  --c-muted:#5a6573;
+  --c-line:#e6e9ee;
+
+  --c-host:#0b5fff;       --c-host-dk:#0846bf;   --c-host-bg:#eaf1ff;
+  --c-guest:#ff5a3c;      --c-guest-dk:#d63d22;  --c-guest-bg:#ffe8e2;
+
+  --c-accent:#10b981;
+  --c-warn:#f59e0b;       --c-warn-bg:#fef3c7;
+  --c-ok:#10b981;         --c-ok-bg:#d1fae5;
+  --c-bad:#ef4444;        --c-bad-bg:#fee2e2;
+
+  --r-sm:8px; --r-md:14px; --r-lg:22px;
+  --shadow-sm:0 1px 2px rgba(11,26,43,.06),0 1px 3px rgba(11,26,43,.08);
+  --shadow-md:0 4px 14px rgba(11,26,43,.10);
+  --shadow-lg:0 20px 48px rgba(11,26,43,.14);
+  --wrap:1180px;
+}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 18px}
+
+/* ---------- Section accent (set data-section on <body>) ---------- */
+body[data-section="host"]  { --section: var(--c-host);  --section-dk: var(--c-host-dk);  --section-bg: var(--c-host-bg); }
+body[data-section="guest"] { --section: var(--c-guest); --section-dk: var(--c-guest-dk); --section-bg: var(--c-guest-bg); }
+body:not([data-section])   { --section: var(--c-ink);   --section-dk: #000;              --section-bg: #f1f3f7; }
+
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid var(--c-line)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:62px}
+.brand{display:flex;align-items:center;gap:8px;font-weight:800;font-size:18px;letter-spacing:-.01em;color:var(--c-ink)}
+.brand-mark{width:30px;height:30px;border-radius:8px;background:linear-gradient(135deg,var(--c-host),var(--c-guest));display:grid;place-items:center;color:#fff;font-weight:900;font-size:14px}
+.nav-links{display:none;gap:26px;font-weight:500;font-size:15px}
+.nav-links a{color:var(--c-muted)}
+.nav-links a:hover{color:var(--c-ink)}
+.nav-links a.is-active{color:var(--section)}
+.nav-cta{display:inline-flex;align-items:center;gap:6px;background:var(--section);color:#fff;padding:9px 16px;border-radius:999px;font-weight:600;font-size:14px}
+.nav-cta:hover{background:var(--section-dk)}
+.burger{width:28px;height:28px;display:grid;place-items:center}
+.burger span{display:block;width:22px;height:2px;background:var(--c-ink);position:relative}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0;width:22px;height:2px;background:var(--c-ink)}
+.burger span::before{top:-7px}.burger span::after{top:7px}
+@media(min-width:840px){.nav-links{display:flex}.burger{display:none}}
+
+/* Mobile drawer */
+.nav-drawer{position:fixed;inset:62px 0 0 0;background:#fff;z-index:49;padding:24px 22px;display:none;flex-direction:column;gap:6px;border-top:1px solid var(--c-line)}
+.nav-drawer.open{display:flex}
+.nav-drawer a{padding:14px 8px;font-weight:600;font-size:17px;color:var(--c-ink);border-bottom:1px solid var(--c-line)}
+.nav-drawer a:hover{color:var(--section)}
+@media(min-width:840px){.nav-drawer{display:none !important}}
+
+/* ============================================================
+   ADS WRAPPERS (CLS-safe)
+   ============================================================ */
+.ads{display:block;width:100%;margin:18px auto;text-align:center;background:#f6f7f9;border:1px dashed #d8dde4;border-radius:var(--r-sm);overflow:hidden;color:#9aa3ad;font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.ads::before{content:"Pubblicità";display:block;padding-top:8px}
+.ads-above-fold{min-height:100px}
+.ads-in-article{min-height:280px;margin:24px auto}
+.ads-sticky-footer{position:fixed;left:0;right:0;bottom:0;z-index:60;min-height:90px;margin:0;border-radius:0;border-left:0;border-right:0;border-bottom:0;background:#fff;box-shadow:0 -2px 12px rgba(11,26,43,.08)}
+.ads-sticky-footer .ads-close{position:absolute;top:4px;right:6px;width:22px;height:22px;border-radius:50%;background:#0b1a2b;color:#fff;font-size:14px;line-height:22px;text-align:center;cursor:pointer}
+@media(min-width:840px){.ads-above-fold{min-height:90px}.ads-in-article{min-height:250px}.ads-sticky-footer{min-height:90px}}
+
+/* ============================================================
+   FB WELCOME BANNER (auto-show via JS if referrer=facebook)
+   ============================================================ */
+.fb-welcome{display:none;background:linear-gradient(90deg,#1877f2,#4267b2);color:#fff;padding:12px 18px;font-size:14px;text-align:center;position:relative}
+.fb-welcome.show{display:block}
+.fb-welcome strong{font-weight:700}
+.fb-welcome a{text-decoration:underline;font-weight:600;margin-left:6px}
+.fb-welcome .x{position:absolute;right:10px;top:50%;transform:translateY(-50%);width:24px;height:24px;border-radius:50%;background:rgba(255,255,255,.18);line-height:24px;cursor:pointer}
+
+/* ============================================================
+   COMMUNITY STRIP (FB group social proof)
+   ============================================================ */
+.community{background:#f4f7ff;border:1px solid #dbe6ff;border-radius:var(--r-lg);padding:24px;display:grid;grid-template-columns:1fr;gap:18px;align-items:center}
+@media(min-width:760px){.community{grid-template-columns:auto 1fr auto;gap:24px;padding:28px}}
+.community .fb-mark{width:54px;height:54px;border-radius:14px;background:#1877f2;display:grid;place-items:center;color:#fff;font-weight:800;font-size:28px;font-family:Helvetica,Arial,sans-serif}
+.community h3{font-size:clamp(18px,2.6vw,22px);font-weight:800;letter-spacing:-.01em;color:var(--c-ink);line-height:1.25}
+.community p{color:var(--c-muted);font-size:14px;margin-top:4px}
+.community .members{display:flex;align-items:center;margin-top:8px}
+.community .members .avatar{width:28px;height:28px;border-radius:50%;border:2px solid #fff;margin-left:-8px;background:linear-gradient(135deg,#fbbf24,#f59e0b)}
+.community .members .avatar:nth-child(1){margin-left:0;background:linear-gradient(135deg,#0b5fff,#0846bf)}
+.community .members .avatar:nth-child(2){background:linear-gradient(135deg,#ff5a3c,#d63d22)}
+.community .members .avatar:nth-child(3){background:linear-gradient(135deg,#10b981,#059669)}
+.community .members .avatar:nth-child(4){background:linear-gradient(135deg,#a855f7,#7c3aed)}
+.community .members span{margin-left:10px;font-size:13px;color:var(--c-muted);font-weight:600}
+.community .join{background:#1877f2;color:#fff;font-weight:700;padding:14px 22px;border-radius:999px;font-size:15px;display:inline-flex;align-items:center;gap:8px;white-space:nowrap}
+.community .join:hover{background:#0f5fcc}
+
+/* ============================================================
+   FLOATING ACTION BUTTONS (WhatsApp + Messenger)
+   ============================================================ */
+.fab-stack{position:fixed;right:14px;bottom:108px;z-index:55;display:flex;flex-direction:column;gap:10px}
+.fab{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;box-shadow:0 6px 20px rgba(0,0,0,.22);color:#fff;transition:transform .15s ease}
+.fab:hover{transform:scale(1.06)}
+.fab svg{width:28px;height:28px;fill:#fff}
+.fab.wa{background:#25d366}
+.fab.msg{background:#0084ff}
+.fab-wrap{position:relative}
+.fab-label{position:absolute;right:64px;top:50%;transform:translateY(-50%);background:#0b1a2b;color:#fff;font-size:12px;font-weight:600;padding:6px 10px;border-radius:6px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .15s ease}
+.fab-wrap:hover .fab-label{opacity:1}
+
+/* ============================================================
+   LEAD FORM (used in dark "lead" sections)
+   ============================================================ */
+.lead-form{background:#fff;color:var(--c-ink);border-radius:var(--r-md);padding:20px;display:grid;gap:12px}
+.lead-form label{font-size:13px;font-weight:600;color:var(--c-ink)}
+.lead-form input,.lead-form select{width:100%;padding:12px 14px;border:1px solid var(--c-line);border-radius:10px;background:#fff}
+.lead-form input:focus,.lead-form select:focus{outline:2px solid var(--section);outline-offset:1px;border-color:var(--section)}
+.lead-form button{background:var(--section);color:#fff;padding:14px 18px;border-radius:10px;font-weight:700;font-size:15px}
+.lead-form button:hover{background:var(--section-dk)}
+.lead-form .priv{font-size:11px;color:var(--c-muted);text-align:center}
+
+/* ============================================================
+   COMMON SECTION TYPOGRAPHY
+   ============================================================ */
+section.block{padding:46px 0}
+.eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--c-host);background:var(--c-host-bg);padding:5px 10px;border-radius:6px}
+.eyebrow.guest{color:var(--c-guest-dk);background:var(--c-guest-bg)}
+h2.section-title{font-size:clamp(24px,3.5vw,34px);line-height:1.15;letter-spacing:-.02em;font-weight:800;margin-top:10px;color:var(--c-ink);text-wrap:balance;max-width:22ch}
+.section-sub{color:var(--c-muted);margin-top:8px;max-width:60ch;text-wrap:pretty}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer.site{margin-top:60px;padding:30px 0 24px;border-top:1px solid var(--c-line);background:#fafbfc;font-size:14px;color:var(--c-muted)}
+footer.site .f-grid{display:grid;grid-template-columns:1fr;gap:22px}
+@media(min-width:760px){footer.site .f-grid{grid-template-columns:1.4fr 1fr 1fr 1fr}}
+footer.site .f-col h4{font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:var(--c-ink);margin-bottom:10px}
+footer.site .f-col ul{list-style:none;display:grid;gap:6px}
+footer.site .f-col a:hover{color:var(--c-ink)}
+footer.site .f-bottom{margin-top:22px;padding-top:16px;border-top:1px solid var(--c-line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:12px}
+
+/* ============================================================
+   A11Y — skip link + focus
+   ============================================================ */
+.skip-link{position:absolute;left:-9999px;top:0;background:var(--c-ink);color:#fff;padding:10px 14px;border-radius:0 0 8px 0;z-index:100;font-weight:600}
+.skip-link:focus{left:0}
+:focus-visible{outline:2px solid var(--section);outline-offset:2px;border-radius:4px}
+
+/* Respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto !important}
+}

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+
+<!-- ============ FAVICON / PWA ============ -->
+<link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/icon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<meta name="theme-color" content="#0b5fff">
+<meta name="application-name" content="AffittiBrevi.it">
+<meta name="apple-mobile-web-app-title" content="AffittiBrevi">
+<!-- ============ OPEN GRAPH / TWITTER ============ -->
+<meta property="og:site_name" content="AffittiBrevi.it">
+<meta property="og:locale" content="it_IT">
+<meta property="og:title" content="Kit Check-in / Check-out — Pack Host | AffittiBrevi.it">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://affittibrevi.it/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="AffittiBrevi.it — la guida indipendente agli affitti brevi in Italia">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kit Check-in / Check-out — Pack Host | AffittiBrevi.it">
+<meta name="twitter:image" content="https://affittibrevi.it/assets/og-image.png">
+<title>Kit Check-in / Check-out — Pack Host | AffittiBrevi.it</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<link rel="stylesheet" href="_print.css">
+<style>
+.welcome-card{
+  background:linear-gradient(160deg,#0b5fff,#0846bf);
+  color:#fff;border-radius:14px;padding:30px;
+  margin:14px 0 20px;
+}
+.welcome-card h3{color:#fff;border:0;padding:0;font-size:18pt;font-weight:800;letter-spacing:-.02em}
+.welcome-card p{font-size:11pt;opacity:.95}
+.rule{display:flex;gap:14px;padding:10px 0;border-bottom:1px dashed #e6e9ee;align-items:flex-start}
+.rule:last-child{border:0}
+.rule .ico{flex:0 0 32px;width:32px;height:32px;border-radius:8px;background:#eaf1ff;color:#0b5fff;display:grid;place-items:center;font-weight:800;font-size:13pt}
+.rule .body strong{display:block;font-size:11pt}
+.rule .body span{font-size:10pt;color:#5a6573}
+
+.fornitori{display:grid;grid-template-columns:1fr;gap:8px}
+.fornitore{display:grid;grid-template-columns:140px 1fr;padding:10px 14px;border:1px solid #e6e9ee;border-radius:8px;font-size:10pt;align-items:center}
+.fornitore strong{color:#0b5fff;text-transform:uppercase;letter-spacing:.06em;font-size:9pt;font-weight:800}
+</style>
+</head>
+<body>
+
+<div class="print-bar">
+  <a href="index.html" class="ghost">← Pack</a>
+  <button onclick="window.print()">🖨 Stampa / Salva PDF</button>
+</div>
+
+<!-- ====================== PAGINA 1 — Lettera Benvenuto ====================== -->
+<section class="page">
+  <header class="doc-head">
+    <div class="brand-mark">
+      <div class="mk">AB</div>
+      <span>AffittiBrevi<small>.it</small></span>
+    </div>
+    <span class="doc-tag">Doc 5 di 5 · Check-in Kit</span>
+  </header>
+
+  <div class="doc-title">
+    <h1>Kit Check-in / Check-out</h1>
+    <p class="sub">Lettera benvenuto, regolamento casa, istruzioni elettrodomestici, contatti emergenze, rubrica fornitori. Tutto editabile, da stampare e lasciare in casa.</p>
+    <div class="meta">v.2025.1 · personalizza i campi prima della stampa</div>
+  </div>
+
+  <div class="welcome-card">
+    <h3>Ciao <span class="field" style="background:rgba(255,255,255,.18);border:0;color:#fff;display:inline-block;min-width:140px;padding:2px 8px;border-radius:4px">[NOME OSPITE]</span>,<br>benvenuto/a a casa nostra! 🏡</h3>
+    <p style="margin-top:14px">Speriamo che il tuo soggiorno di <strong style="color:#fff">[NUMERO NOTTI]</strong> notti a <strong style="color:#fff">[CITTÀ]</strong> sia memorabile. In queste pagine trovi tutto il necessario: regolamento, codici, istruzioni e i nostri contatti se hai bisogno.</p>
+    <p style="margin-top:10px">Per qualsiasi cosa, chiama o scrivi su WhatsApp: <strong style="color:#fff">[+39 TUO NUMERO]</strong>. Rispondiamo entro 30 minuti.</p>
+    <p style="margin-top:14px;font-size:10pt;opacity:.85">Con affetto,<br><strong style="color:#fff">[TUO NOME]</strong></p>
+  </div>
+
+  <h2>Informazioni essenziali</h2>
+  <div class="form-row"><label>Wi-Fi network</label><div class="field"></div></div>
+  <div class="form-row"><label>Wi-Fi password</label><div class="field"></div></div>
+  <div class="form-row"><label>Codice porta / cassaforte</label><div class="field"></div></div>
+  <div class="form-row"><label>Orario check-in</label><div class="field"></div></div>
+  <div class="form-row"><label>Orario check-out</label><div class="field"></div></div>
+  <div class="form-row"><label>Posizione contatore</label><div class="field"></div></div>
+  <div class="form-row"><label>Differenziata: giorno raccolta</label><div class="field"></div></div>
+
+</section>
+
+<!-- ====================== PAGINA 2 — Regolamento Casa ====================== -->
+<section class="page">
+  <header class="doc-head">
+    <div class="brand-mark">
+      <div class="mk">AB</div>
+      <span>AffittiBrevi<small>.it</small></span>
+    </div>
+    <span class="doc-tag">Regolamento casa</span>
+  </header>
+
+  <h2>Le 8 regole della casa</h2>
+
+  <div class="rule">
+    <div class="ico">①</div>
+    <div class="body">
+      <strong>Silenzio dalle 22:00 alle 08:00</strong>
+      <span>I vicini ringraziano. Niente musica alta, voci alte sui balconi, lavatrici notturne.</span>
+    </div>
+  </div>
+  <div class="rule">
+    <div class="ico">②</div>
+    <div class="body">
+      <strong>Vietato fumare all'interno</strong>
+      <span>Sui balconi o in terrazza sì, purché si usi il portacenere fornito. Multa di 100€ per pulizia straordinaria in caso di odore di fumo.</span>
+    </div>
+  </div>
+  <div class="rule">
+    <div class="ico">③</div>
+    <div class="body">
+      <strong>Animali solo previo accordo</strong>
+      <span>Se l'host ha autorizzato il tuo pet, ti chiediamo di non farlo salire su letti e divani e di raccogliere subito i suoi bisogni.</span>
+    </div>
+  </div>
+  <div class="rule">
+    <div class="ico">④</div>
+    <div class="body">
+      <strong>Capienza massima rispettata</strong>
+      <span>Niente ospiti aggiuntivi senza preavviso. Per festeggiamenti/eventi: vietati.</span>
+    </div>
+  </div>
+  <div class="rule">
+    <div class="ico">⑤</div>
+    <div class="body">
+      <strong>Rifiuti differenziati</strong>
+      <span>Carta, plastica, vetro, organico, indifferenziato. Sacchetti nel ripostiglio. Giorno raccolta indicato a pag. 1.</span>
+    </div>
+  </div>
+  <div class="rule">
+    <div class="ico">⑥</div>
+    <div class="body">
+      <strong>Riscaldamento / clima con moderazione</strong>
+      <span>Spegnili quando esci dalla casa. Massimo 22° in inverno, minimo 24° in estate (norma di legge per appartamenti turistici).</span>
+    </div>
+  </div>
+  <div class="rule">
+    <div class="ico">⑦</div>
+    <div class="body">
+      <strong>Cucina: usa, ma pulisci</strong>
+      <span>Stoviglie pulite dopo l'uso o nella lavastoviglie. Lascia il piano cottura come l'hai trovato.</span>
+    </div>
+  </div>
+  <div class="rule">
+    <div class="ico">⑧</div>
+    <div class="body">
+      <strong>Chiudi tutto al check-out</strong>
+      <span>Spegni luci, climatizzatore, riscaldamento. Chiudi rubinetto generale acqua se previsto. Lascia le chiavi nel posto indicato.</span>
+    </div>
+  </div>
+
+  <h2>Wi-Fi & TV</h2>
+  <div class="form-row"><label>Rete Wi-Fi (SSID)</label><div class="field"></div></div>
+  <div class="form-row"><label>Password</label><div class="field"></div></div>
+  <div class="form-row"><label>Telecomando TV</label><div class="field"></div></div>
+  <div class="form-row"><label>Netflix / Prime account</label><div class="field"></div></div>
+
+</section>
+
+<!-- ====================== PAGINA 3 — Emergenze + Fornitori ====================== -->
+<section class="page">
+  <header class="doc-head">
+    <div class="brand-mark">
+      <div class="mk">AB</div>
+      <span>AffittiBrevi<small>.it</small></span>
+    </div>
+    <span class="doc-tag">Emergenze & Fornitori</span>
+  </header>
+
+  <h2>Contatti d'emergenza</h2>
+
+  <table>
+    <tr><th>Servizio</th><th>Numero</th><th>Note</th></tr>
+    <tr><td>Emergenza generale (UE)</td><td>112</td><td>Sostituisce 113/115/118</td></tr>
+    <tr><td>Vigili del fuoco</td><td>115</td><td>Solo emergenze gravi</td></tr>
+    <tr><td>Soccorso medico</td><td>118</td><td>Ambulanza</td></tr>
+    <tr><td>Guardia medica zona</td><td><span class="field" style="display:inline-block;min-width:120px"></span></td><td>Notturna / festiva</td></tr>
+    <tr><td>Farmacia di turno</td><td><span class="field" style="display:inline-block;min-width:120px"></span></td><td>Cerca su <a href="https://www.farmaciediturno.org">farmaciediturno.org</a></td></tr>
+    <tr><td>Carabinieri</td><td>112</td><td>—</td></tr>
+    <tr><td>Polizia</td><td>113</td><td>—</td></tr>
+  </table>
+
+  <h2>Host e gestori</h2>
+  <div class="form-row"><label>Host (WhatsApp)</label><div class="field"></div></div>
+  <div class="form-row"><label>Co-host / referente locale</label><div class="field"></div></div>
+  <div class="form-row"><label>Property manager</label><div class="field"></div></div>
+
+  <h2>Rubrica fornitori della casa</h2>
+  <p style="font-size:9pt;color:#94a3b8;margin-bottom:8px">Personalizza con i contatti del tuo immobile prima di stampare.</p>
+
+  <div class="fornitori">
+    <div class="fornitore"><strong>Idraulico</strong><span><span class="field" style="display:inline-block;min-width:200px"></span></span></div>
+    <div class="fornitore"><strong>Elettricista</strong><span><span class="field" style="display:inline-block;min-width:200px"></span></span></div>
+    <div class="fornitore"><strong>Caldaia / climatizzatore</strong><span><span class="field" style="display:inline-block;min-width:200px"></span></span></div>
+    <div class="fornitore"><strong>Pulizie</strong><span><span class="field" style="display:inline-block;min-width:200px"></span></span></div>
+    <div class="fornitore"><strong>Fabbro h24</strong><span><span class="field" style="display:inline-block;min-width:200px"></span></span></div>
+    <div class="fornitore"><strong>Wi-Fi / provider</strong><span><span class="field" style="display:inline-block;min-width:200px"></span></span></div>
+    <div class="fornitore"><strong>Amministratore condominio</strong><span><span class="field" style="display:inline-block;min-width:200px"></span></span></div>
+  </div>
+
+  <h2>Check-out: cosa fare</h2>
+
+  <div class="check-item"><div class="box"></div><div class="body"><strong>Buttare la spazzatura</strong><span>Differenziata, secondo il giorno indicato.</span></div></div>
+  <div class="check-item"><div class="box"></div><div class="body"><strong>Sistemare le stoviglie</strong><span>Lavandinosgomberio o lavastoviglie già caricata e avviata.</span></div></div>
+  <div class="check-item"><div class="box"></div><div class="body"><strong>Spegnere clima/riscaldamento, luci, TV</strong><span>Verificare anche fornelli/forno.</span></div></div>
+  <div class="check-item"><div class="box"></div><div class="body"><strong>Chiudere finestre e porte</strong><span>Anche persiane se presenti.</span></div></div>
+  <div class="check-item"><div class="box"></div><div class="body"><strong>Lasciare le chiavi</strong><span>Nel cassetto / nella key-box / consegnate all'host secondo istruzioni.</span></div></div>
+  <div class="check-item"><div class="box"></div><div class="body"><strong>Lasciaci una recensione 🌟</strong><span>Se ti sei trovato bene, una stella per noi vale oro!</span></div></div>
+
+  <div class="callout ok">
+    <strong>Grazie!</strong>
+    Grazie per aver scelto la nostra casa. Se torni in città, contattaci direttamente per uno sconto fedeltà del 10%.
+  </div>
+
+  <div class="foot-note">
+    Documento personalizzabile. Stampa una copia da lasciare in casa e/o invia una versione digitale via WhatsApp prima del check-in.
+  </div>
+</section>
+
+</body>
+</html>
