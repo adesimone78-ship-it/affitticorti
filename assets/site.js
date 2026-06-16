@@ -159,7 +159,7 @@
   // or edit the defaults below once. Without a client, placeholders stay inert
   // styled boxes (no requests, no layout shift).
   var ADS = window.ADS_CONFIG = Object.assign({
-    client: '',                 // es. 'ca-pub-XXXXXXXXXXXXXXXX'
+    client: 'ca-pub-1145255592067202',                 // es. 'ca-pub-XXXXXXXXXXXXXXXX'
     slots: {                    // ID unità pubblicitarie create su AdSense
       'ads-above-fold':   '',
       'ads-in-article':   '',
