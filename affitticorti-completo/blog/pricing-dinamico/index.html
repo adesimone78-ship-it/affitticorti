@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,follow">
+<meta name="description" content="PriceLabs vs Wheelhouse vs Beyond: confronto reale dopo 12 mesi di uso. Quando un tool gratis basta e quando conviene pagare.">
+<script src="../../assets/cookie-consent.js"></script>
+<link rel="stylesheet" href="../../assets/site.css">
+<script src="../../assets/site.js" defer></script>
+<link rel="canonical" href="https://affitticorti.it/blog/pricing-dinamico/">
+
+<!-- ============ FAVICON / PWA ============ -->
+<link rel="icon" href="../../assets/icon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/icon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#0b5fff">
+<meta name="application-name" content="AffittiCorti.it">
+<meta name="apple-mobile-web-app-title" content="AffittiCorti">
+<!-- ============ OPEN GRAPH / TWITTER ============ -->
+<meta property="og:site_name" content="AffittiCorti.it">
+<meta property="og:locale" content="it_IT">
+<meta property="og:title" content="Pricing dinamico | AffittiCorti.it">
+<meta property="og:description" content="PriceLabs vs Wheelhouse vs Beyond: confronto reale dopo 12 mesi di uso. Quando un tool gratis basta e quando conviene pagare.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://affitticorti.it/blog/pricing-dinamico/">
+<meta property="og:image" content="https://affitticorti.it/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="AffittiCorti.it — la guida indipendente agli affitti brevi in Italia">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pricing dinamico | AffittiCorti.it">
+<meta name="twitter:image" content="https://affitticorti.it/assets/og-image.png">
+<title>Pricing dinamico | AffittiCorti.it</title>
+
+<style>
+.stub-hero{padding:80px 0 40px;text-align:center;background:linear-gradient(180deg,#fafbfc 0%,#fff 100%)}
+.stub-hero .badge{display:inline-flex;align-items:center;gap:8px;background:var(--c-warn-bg);color:#92400e;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:7px 14px;border-radius:999px}
+.stub-hero .badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--c-warn);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.stub-hero h1{font-size:clamp(30px,5vw,46px);line-height:1.1;letter-spacing:-.025em;font-weight:800;margin-top:18px;text-wrap:balance;max-width:18ch;margin-left:auto;margin-right:auto;color:var(--c-ink)}
+.stub-hero p.lede{margin:14px auto 0;max-width:56ch;color:var(--c-muted);font-size:17px;text-wrap:pretty}
+.stub-actions{margin-top:30px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.stub-actions a{display:inline-flex;align-items:center;gap:8px;padding:14px 22px;border-radius:999px;font-weight:700;font-size:15px}
+.stub-actions .primary{background:var(--section);color:#fff}
+.stub-actions .primary:hover{background:var(--section-dk)}
+.stub-actions .ghost{background:#fff;color:var(--c-ink);border:1px solid var(--c-line)}
+.stub-actions .ghost:hover{border-color:var(--section);color:var(--section)}
+.stub-notify{margin-top:36px;background:#fff;border:1px solid var(--c-line);border-radius:var(--r-lg);padding:24px;max-width:480px;margin-left:auto;margin-right:auto;text-align:left}
+.stub-notify h3{font-size:16px;font-weight:700;color:var(--c-ink)}
+.stub-notify p{color:var(--c-muted);font-size:14px;margin-top:4px}
+.stub-notify form{margin-top:14px;display:flex;gap:8px}
+.stub-notify input{flex:1;padding:12px 14px;border:1px solid var(--c-line);border-radius:10px;background:#fff}
+.stub-notify input:focus{outline:2px solid var(--section);outline-offset:1px;border-color:var(--section)}
+.stub-notify button{background:var(--section);color:#fff;padding:12px 18px;border-radius:10px;font-weight:700}
+
+.related-grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:20px}
+@media(min-width:680px){.related-grid{grid-template-columns:repeat(3,1fr)}}
+.related-card{border:1px solid var(--c-line);border-radius:var(--r-md);padding:22px;background:#fff;transition:transform .15s,box-shadow .15s,border-color .15s;display:flex;flex-direction:column;gap:8px}
+.related-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-md);border-color:var(--section)}
+.related-card .eyebrow{align-self:flex-start}
+.related-card h3{font-size:16px;font-weight:700;color:var(--c-ink);line-height:1.3}
+.related-card .arr{margin-top:auto;color:var(--section);font-weight:600;font-size:14px;padding-top:6px}
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">Vai al contenuto</a>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="../../" class="brand">
+      <span class="brand-mark">AB</span>
+      <span>AffittiCorti<span style="color:var(--c-guest)">.it</span></span>
+    </a>
+    <nav class="nav-links" aria-label="Principale">
+      <a href="../../host/">Per Host</a>
+      <a href="../../guest/">Per Guest</a>
+      <a href="../../blog/">Blog</a>
+      <a href="../../#gruppo">Gruppo FB</a>
+    </nav>
+    <a href="../../" class="nav-cta">← Home</a>
+    <button class="burger" aria-label="Menu" aria-expanded="false" aria-controls="navDrawer"><span></span></button>
+  </div>
+  <nav class="nav-drawer" id="navDrawer" aria-label="Menu mobile">
+    <a href="../../">Home</a>
+    <a href="../../host/">Per Host</a>
+    <a href="../../guest/">Per Guest</a>
+    <a href="../../blog/">Blog</a>
+    <a href="../../#gruppo">Gruppo FB</a>
+  </nav>
+</header>
+
+<div id="fbWelcome" class="fb-welcome" role="region">
+  <strong>👋 Benvenuto dal gruppo "Affitti corti - Case vacanza"!</strong>
+  <span class="x" aria-label="Chiudi">×</span>
+</div>
+
+<main id="main">
+
+<section class="stub-hero">
+  <div class="wrap">
+    <span class="badge">In arrivo</span>
+    <h1>Pricing dinamico</h1>
+    <p class="lede">PriceLabs vs Wheelhouse vs Beyond: confronto reale dopo 12 mesi di uso. Quando un tool gratis basta e quando conviene pagare.</p>
+    <div class="stub-actions">
+      <a href="../../" class="primary">← Torna alla home</a>
+      <a href="https://www.facebook.com/groups/202432716476431/" target="_blank" rel="noopener" class="ghost" data-fb-track="join_group_stub">Unisciti al gruppo FB</a>
+    </div>
+
+    <div class="stub-notify">
+      <h3>Avvisami quando è pronta</h3>
+      <p>Lascia l'email: ti scriviamo solo quando questa pagina è online. Niente spam, mai.</p>
+      <form class="lead-form" data-lead-name="stub_blog_pricing-dinamico_index_html" novalidate>
+        <input type="hidden" name="profile" value="stub-home">
+        <input type="hidden" name="page" value="blog/pricing-dinamico/index.html">
+        <input type="email" name="email" required placeholder="la-tua-email@dominio.it" aria-label="Email">
+        <button type="submit">Avvisami</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <h2 class="section-title" style="font-size:22px">Nel frattempo, dai un'occhiata a:</h2>
+    <div class="related-grid">
+      <a href="../../blog/" class="related-card"><span class="eyebrow">Blog</span><h3>Tutti gli articoli</h3><span class="arr">Vai →</span></a>
+      <a href="../../blog/cin-affitti-brevi/" class="related-card"><span class="eyebrow">Articolo</span><h3>Guida CIN 2025</h3><span class="arr">Vai →</span></a>
+      <a href="../../host/" class="related-card"><span class="eyebrow">Toolkit</span><h3>Calcolatore ricavi</h3><span class="arr">Vai →</span></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="f-grid">
+      <div class="f-col">
+        <div class="brand" style="margin-bottom:10px">
+          <span class="brand-mark">AB</span>
+          <span>AffittiCorti<span style="color:var(--c-guest)">.it</span></span>
+        </div>
+        <p>La guida indipendente agli affitti brevi in Italia.</p>
+      </div>
+      <div class="f-col"><h4>Per Host</h4><ul>
+        <li><a href="../../host/">Toolkit + Calcolatore</a></li>
+        <li><a href="../../pack-host/">Pack Host 2025</a></li>
+      </ul></div>
+      <div class="f-col"><h4>Per Guest</h4><ul>
+        <li><a href="../../guest/">Checklist anti-truffa</a></li>
+        <li><a href="../../blog/">Blog</a></li>
+      </ul></div>
+      <div class="f-col"><h4>Risorse</h4><ul>
+        <li><a href="../../">Home</a></li>
+        <li><a href="../../blog/">Blog</a></li>
+      </ul></div>
+    </div>
+    <div class="f-bottom">
+      <span>© 2026 AffittiCorti.it</span>
+      <span><a href="../../privacy/">Privacy</a> · <a href="../../cookie/">Cookie</a></span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

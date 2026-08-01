@@ -1,0 +1,108 @@
+# =====================================================
+# robots.txt — AffittiCorti.it
+# =====================================================
+
+User-agent: *
+Allow: /
+
+# Blocca aree non utili al crawl
+Disallow: /api/
+Disallow: /admin/
+Disallow: /search?
+Disallow: /*?utm_*
+Disallow: /*?fbclid=
+Disallow: /*?gclid=
+Disallow: /tmp/
+Disallow: /private/
+
+# =====================================================
+# GOOGLEBOT — accesso pieno + crawl-delay basso
+# =====================================================
+User-agent: Googlebot
+Allow: /
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.webp$
+Allow: /*.svg$
+Disallow: /api/
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-News
+Allow: /blog/
+
+# =====================================================
+# ADSENSE / ADS BOTS — necessari per la monetizzazione
+# =====================================================
+User-agent: Mediapartners-Google
+Allow: /
+
+User-agent: AdsBot-Google
+Allow: /
+
+User-agent: AdsBot-Google-Mobile
+Allow: /
+
+# =====================================================
+# BING / DUCKDUCKGO / YANDEX
+# =====================================================
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 2
+
+# =====================================================
+# BLOCCO BOT AI / SCRAPER (opzionale — rimuovi se vuoi indicizzazione AI)
+# =====================================================
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: PerplexityBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+# =====================================================
+# BLOCCO SCRAPER AGGRESSIVI
+# =====================================================
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# =====================================================
+# SITEMAP
+# =====================================================
+Sitemap: https://affitticorti.it/sitemap.xml
