@@ -5,19 +5,19 @@ Tutti i file SEO core sono pronti al root del sito. **Prima del deploy in produz
 ---
 
 ## 1. `sitemap.xml`
-- ✅ Sostituisci `https://affittibrevi.it/` con il tuo dominio reale (se diverso)
+- ✅ Sostituisci `https://affitticorti.it/` con il tuo dominio reale (se diverso)
 - ✅ Aggiungi le URL dei nuovi articoli man mano che li pubblichi
 - ✅ Aggiorna `<lastmod>` ad ogni modifica significativa di una pagina
 - 📤 **Submit a Google Search Console**: Property → Sitemaps → incolla `sitemap.xml`
 - 📤 **Submit a Bing Webmaster Tools**: stesso procedimento
 
 ## 2. `robots.txt`
-- ✅ Sostituisci `affittibrevi.it` nell'URL della Sitemap finale
+- ✅ Sostituisci `affitticorti.it` nell'URL della Sitemap finale
 - ⚠️ Il file blocca per default i bot AI (GPTBot, ClaudeBot, ecc.). **Rimuovi** quelle righe se vuoi essere indicizzato in risposte AI (può portare traffico ma cede contenuto)
 - ✅ Verifica online: https://www.google.com/webmasters/tools/robots-testing-tool
 
 ## 3. `ads.txt` ⚠️ CRITICO per AdSense
-- ✅ Sostituisci `pub-0000000000000000` con il **tuo Publisher ID AdSense**
+- ✅ Sostituisci `pub-1145255592067202` con il **tuo Publisher ID AdSense**
   - Lo trovi: AdSense → Account → Informazioni account → ID editore
   - Formato: `pub-1234567890123456` (16 cifre)
 - ✅ Il file DEVE essere accessibile a `https://tuodominio.it/ads.txt` (root, no sottocartella)

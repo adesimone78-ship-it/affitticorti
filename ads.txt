@@ -1,21 +1,21 @@
 # =====================================================
-# ads.txt — AffittiBrevi.it
+# ads.txt — AffittiCorti.it
 # Authorized Digital Sellers (IAB Tech Lab spec v1.0.2)
 # =====================================================
 # ISTRUZIONI:
-# 1. Sostituisci "pub-0000000000000000" con il TUO Publisher ID AdSense
+# 1. Sostituisci "pub-1145255592067202" con il TUO Publisher ID AdSense
 #    (lo trovi su AdSense → Account → Informazioni account → ID editore)
 # 2. Il formato è: <dominio>, <publisher_id>, <relazione DIRECT|RESELLER>, <certification_authority_id>
 # 3. Una riga = un partner autorizzato a vendere il tuo inventory pubblicitario
-# 4. Carica il file al root del sito: https://affittibrevi.it/ads.txt
+# 4. Carica il file al root del sito: https://affitticorti.it/ads.txt
 # 5. Verifica online: https://adstxt.guru/
 # =====================================================
 
 # --- GOOGLE ADSENSE (obbligatorio se usi AdSense) ---
-google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
+google.com, pub-1145255592067202, DIRECT, f08c47fec0942fa0
 
 # --- Esempi di altri partner (decommenta SOLO se attivati) ---
-# google.com, pub-0000000000000000, RESELLER, f08c47fec0942fa0
+# google.com, pub-1145255592067202, RESELLER, f08c47fec0942fa0
 # rubiconproject.com, 12345, RESELLER, 0bfd66d529a55807
 # openx.com, 540123456, RESELLER, 6a698e2ec38604c6
 # pubmatic.com, 156789, RESELLER, 5d62403b186f2ace

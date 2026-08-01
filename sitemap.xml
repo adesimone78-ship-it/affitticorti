@@ -13,19 +13,19 @@
 
   <!-- ============ CORE ============ -->
   <url>
-    <loc>https://affittibrevi.it/</loc>
+    <loc>https://affitticorti.it/</loc>
     <lastmod>2026-05-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://affittibrevi.it/host/</loc>
+    <loc>https://affitticorti.it/host/</loc>
     <lastmod>2026-05-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://affittibrevi.it/guest/</loc>
+    <loc>https://affitticorti.it/guest/</loc>
     <lastmod>2026-05-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -33,13 +33,13 @@
 
   <!-- ============ BLOG ============ -->
   <url>
-    <loc>https://affittibrevi.it/blog/</loc>
+    <loc>https://affitticorti.it/blog/</loc>
     <lastmod>2026-05-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://affittibrevi.it/blog/cin-affitti-brevi/</loc>
+    <loc>https://affitticorti.it/blog/cin-affitti-brevi/</loc>
     <lastmod>2026-04-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

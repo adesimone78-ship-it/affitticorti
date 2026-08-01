@@ -1,5 +1,5 @@
 /* ============================================================
-   AffittiBrevi.it — Compositore "Annuncio per il gruppo"
+   AffittiCorti.it — Compositore "Annuncio per il gruppo"
    Flusso conforme: l'host compone qui, il sistema verifica le
    REGOLE del gruppo, poi (solo se il post è valido) copia il
    testo e apre il gruppo Facebook. La pubblicazione avviene

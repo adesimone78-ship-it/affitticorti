@@ -1,5 +1,5 @@
 /* ==========================================================================
-   AffittiBrevi.it — Cookie Consent + Google Consent Mode v2
+   AffittiCorti.it — Cookie Consent + Google Consent Mode v2
    GDPR / ePrivacy compliant. Vanilla JS, zero dependencies.
    Usage: <script src="/assets/cookie-consent.js" defer></script>
           (must load BEFORE any tag: AdSense, Pixel, GA4)
@@ -14,7 +14,7 @@
     cookieDays: 180,
     policyUrl: '/cookie/',
     privacyUrl: '/privacy/',
-    brand: 'AffittiBrevi.it',
+    brand: 'AffittiCorti.it',
     // categorie disponibili
     categories: [
       { id: 'necessary', label: 'Strettamente necessari', desc: 'Cookie tecnici indispensabili al funzionamento del sito (login, sessione, preferenze base). Sempre attivi, non disattivabili.', required: true },

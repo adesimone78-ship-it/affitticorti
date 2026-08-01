@@ -1,5 +1,5 @@
 /* ============================================================
-   AffittiBrevi.it — Shared site script
+   AffittiCorti.it — Shared site script
    FB welcome banner, WhatsApp link, UTM auto-tagger,
    Pixel tracking helper, lead form handler, mobile nav drawer.
    Loaded with `defer` from every page.
@@ -16,7 +16,7 @@
     pageHandle: 'affitticorti',
     messengerUrl: 'https://m.me/affitticorti',
     whatsapp: '393207637442',
-    whatsappMsg: 'Ciao! Arrivo dal sito AffittiBrevi, vorrei info su...'
+    whatsappMsg: 'Ciao! Arrivo dal sito AffittiCorti, vorrei info su...'
   }, window.FB_CONFIG || {});
 
   // ---- 1) WhatsApp link composer (FAB) ----
@@ -169,28 +169,46 @@
 
   (function initAds(){
     if (!ADS.client) return;    // non configurato → lascia i box inerti
-    if (!document.querySelector('script[data-adsense]')) {
-      var s = document.createElement('script');
-      s.async = true;
-      s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=' + encodeURIComponent(ADS.client);
-      s.crossOrigin = 'anonymous';
-      s.setAttribute('data-adsense', '1');
-      document.head.appendChild(s);
+
+    function hasMarketingConsent(){
+      try {
+        var c = window.getCookieConsent && window.getCookieConsent();
+        return !!(c && c.marketing);
+      } catch(e){ return false; }
     }
-    var types = ['ads-above-fold','ads-in-article','ads-sticky-footer'];
-    document.querySelectorAll('.ads').forEach(function(box){
-      if (box.querySelector('ins.adsbygoogle')) return;
-      var type = types.filter(function(t){ return box.classList.contains(t); })[0] || 'ads-in-article';
-      var slot = (ADS.slots && ADS.slots[type]) || '';
-      var ins = document.createElement('ins');
-      ins.className = 'adsbygoogle';
-      ins.style.display = 'block';
-      ins.setAttribute('data-ad-client', ADS.client);
-      if (slot) ins.setAttribute('data-ad-slot', slot);
-      ins.setAttribute('data-ad-format', 'auto');
-      ins.setAttribute('data-full-width-responsive', 'true');
-      box.appendChild(ins);
-      try { (window.adsbygoogle = window.adsbygoogle || []).push({}); } catch(e){}
+
+    function injectAds(){
+      if (!document.querySelector('script[data-adsense]')) {
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=' + encodeURIComponent(ADS.client);
+        s.crossOrigin = 'anonymous';
+        s.setAttribute('data-adsense', '1');
+        document.head.appendChild(s);
+      }
+      var types = ['ads-above-fold','ads-in-article','ads-sticky-footer'];
+      document.querySelectorAll('.ads').forEach(function(box){
+        if (box.querySelector('ins.adsbygoogle')) return;
+        var type = types.filter(function(t){ return box.classList.contains(t); })[0] || 'ads-in-article';
+        var slot = (ADS.slots && ADS.slots[type]) || '';
+        if (!slot) return; // nessuno slot configurato ancora: lascia il box inerte, niente annunci rotti
+        var ins = document.createElement('ins');
+        ins.className = 'adsbygoogle';
+        ins.style.display = 'block';
+        ins.setAttribute('data-ad-client', ADS.client);
+        ins.setAttribute('data-ad-slot', slot);
+        ins.setAttribute('data-ad-format', 'auto');
+        ins.setAttribute('data-full-width-responsive', 'true');
+        box.appendChild(ins);
+        try { (window.adsbygoogle = window.adsbygoogle || []).push({}); } catch(e){}
+      });
+    }
+
+    // Carica gli annunci solo se il consenso "marketing" è già stato dato...
+    if (hasMarketingConsent()) injectAds();
+    // ...oppure nel momento in cui l'utente lo concede dal banner/modale cookie
+    window.addEventListener('ab:consent', function(e){
+      if (e.detail && e.detail.marketing) injectAds();
     });
   })();
 })();

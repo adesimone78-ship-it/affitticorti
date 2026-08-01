@@ -1,5 +1,5 @@
 /* ==========================================================================
-   AffittiBrevi.it — Pack Host 2025
+   AffittiCorti.it — Pack Host 2025
    Stile condiviso stampa-PDF (A4) per i 5 documenti del pack
    ========================================================================== */
 
@@ -7,7 +7,7 @@
   size: A4;
   margin: 18mm 16mm 22mm 16mm;
   @bottom-center {
-    content: "AffittiBrevi.it · Pack Host 2025 · pag. " counter(page) " / " counter(pages);
+    content: "AffittiCorti.it · Pack Host 2025 · pag. " counter(page) " / " counter(pages);
     font-family: Inter, "Helvetica Neue", Arial, sans-serif;
     font-size: 9pt;
     color: #94a3b8;

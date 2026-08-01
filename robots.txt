@@ -1,5 +1,5 @@
 # =====================================================
-# robots.txt — AffittiBrevi.it
+# robots.txt — AffittiCorti.it
 # =====================================================
 
 User-agent: *
@@ -105,4 +105,4 @@ Disallow: /
 # =====================================================
 # SITEMAP
 # =====================================================
-Sitemap: https://affittibrevi.it/sitemap.xml
+Sitemap: https://affitticorti.it/sitemap.xml

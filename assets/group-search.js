@@ -1,5 +1,5 @@
 /* ============================================================
-   AffittiBrevi.it — Ricerca casa nel gruppo Facebook (lato Guest)
+   AffittiCorti.it — Ricerca casa nel gruppo Facebook (lato Guest)
    L'utente inserisce pochi parametri, il sistema compone una
    query di ricerca e apre la ricerca DENTRO il gruppo Facebook:
    https://www.facebook.com/groups/<id>/search/?q=<query>
