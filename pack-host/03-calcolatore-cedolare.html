@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+
+<!-- ============ FAVICON / PWA ============ -->
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/icon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0b5fff">
+<meta name="application-name" content="AffittiCorti.it">
+<meta name="apple-mobile-web-app-title" content="AffittiCorti">
+<!-- ============ OPEN GRAPH / TWITTER ============ -->
+<meta property="og:site_name" content="AffittiCorti.it">
+<meta property="og:locale" content="it_IT">
+<meta property="og:title" content="Calcolatore Cedolare 21%/26% — Pack Host | AffittiCorti.it">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://affitticorti.it/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="AffittiCorti.it — la guida indipendente agli affitti brevi in Italia">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Calcolatore Cedolare 21%/26% — Pack Host | AffittiCorti.it">
+<meta name="twitter:image" content="https://affitticorti.it/assets/og-image.png">
+<title>Calcolatore Cedolare 21%/26% — Pack Host | AffittiCorti.it</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<link rel="stylesheet" href="/pack-host/_print.css">
+<style>
+/* aggiunte specifiche calcolatore */
+.calc{display:grid;grid-template-columns:1fr;gap:14px;margin:16px 0}
+@media(min-width:680px){.calc{grid-template-columns:repeat(3,1fr)}}
+.cinput{padding:14px;border:1px solid #e6e9ee;border-radius:10px;background:#fafbfc}
+.cinput label{display:block;font-size:9pt;font-weight:700;color:#5a6573;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px}
+.cinput input,.cinput select{width:100%;padding:9px 10px;border:1px solid #cbd6e8;border-radius:8px;background:#fff;font:inherit;font-size:11pt}
+.cinput input:focus,.cinput select:focus{outline:2px solid #0b5fff;outline-offset:1px;border-color:#0b5fff}
+
+.results{margin-top:14px;border-radius:10px;overflow:hidden;border:1px solid #e6e9ee}
+.results-head{background:#0b1a2b;color:#fff;padding:12px 16px;display:flex;justify-content:space-between;align-items:center}
+.results-head h3{color:#fff;font-size:11pt;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border:0;padding:0;margin:0}
+.results-head .big{font-size:18pt;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.results table{margin:0;font-size:10.5pt}
+.results th,.results td{padding:10px 14px}
+.results .winner{background:#ecfdf5}
+.results .winner td{font-weight:700;color:#065f46}
+
+.scenario-tag{display:inline-block;background:#eaf1ff;color:#0b5fff;font-size:9pt;font-weight:700;padding:3px 8px;border-radius:4px;letter-spacing:.06em;text-transform:uppercase}
+
+@media print {
+  .cinput input,.cinput select{border-style:dotted;background:transparent}
+}
+</style>
+</head>
+<body>
+
+<div class="print-bar">
+  <a href="/pack-host.html" class="ghost">← Pack</a>
+  <button onclick="window.print()">🖨 Stampa / Salva PDF</button>
+</div>
+
+<section class="page">
+  <header class="doc-head">
+    <div class="brand-mark">
+      <div class="mk">AB</div>
+      <span>AffittiCorti<small>.it</small></span>
+    </div>
+    <span class="doc-tag">Doc 3 di 5 · Fiscalità</span>
+  </header>
+
+  <div class="doc-title">
+    <h1>Calcolatore Cedolare 21% / 26%</h1>
+    <p class="sub">Inserisci i tuoi dati: confronto netto annuale tra cedolare 21%, cedolare 26% e IRPEF ordinaria. Funziona offline, salvabile come PDF.</p>
+    <div class="meta">Foglio interattivo · v.2025.1</div>
+  </div>
+
+  <div class="callout">
+    <strong>Promemoria normativo</strong>
+    Cedolare <strong>21%</strong> sul 1° immobile destinato ad affitti brevi. Cedolare <strong>26%</strong> dal 2° al 4° immobile. Dal 5° immobile in poi: attività d'impresa obbligatoria (no cedolare).
+  </div>
+
+  <h2>1. I tuoi dati</h2>
+  <div class="calc">
+    <div class="cinput">
+      <label>Ricavo lordo annuo (€)</label>
+      <input id="lordo" type="number" min="0" step="100" value="18000">
+    </div>
+    <div class="cinput">
+      <label>Numero immobili affittati</label>
+      <select id="nImm">
+        <option value="1">1 immobile</option>
+        <option value="2">2 immobili</option>
+        <option value="3">3 immobili</option>
+        <option value="4">4 immobili</option>
+      </select>
+    </div>
+    <div class="cinput">
+      <label>Aliquota IRPEF marginale</label>
+      <select id="irpef">
+        <option value="0.23">23% — fino 28.000 €</option>
+        <option value="0.35" selected>35% — 28.001-50.000 €</option>
+        <option value="0.43">43% — oltre 50.000 €</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="calc">
+    <div class="cinput">
+      <label>Commissioni OTA (%)</label>
+      <input id="ota" type="number" min="0" max="30" step="1" value="15">
+    </div>
+    <div class="cinput">
+      <label>Spese deducibili IRPEF (€/anno)</label>
+      <input id="spese" type="number" min="0" step="100" value="2500">
+    </div>
+    <div class="cinput">
+      <label>Imposta di soggiorno incassata</label>
+      <select id="sogg">
+        <option value="no" selected>Già esclusa dal lordo</option>
+        <option value="si">Da scorporare (3% del lordo)</option>
+      </select>
+    </div>
+  </div>
+
+  <h2>2. Risultati confronto regimi</h2>
+
+  <div class="results">
+    <div class="results-head">
+      <h3>Netto annuo stimato</h3>
+      <div class="big" id="bestNet">— €</div>
+    </div>
+    <table>
+      <thead>
+        <tr><th>Regime</th><th style="text-align:right">Imposta</th><th style="text-align:right">Netto annuo</th><th>Note</th></tr>
+      </thead>
+      <tbody>
+        <tr id="row21"><td><span class="scenario-tag">21%</span> Cedolare base</td><td style="text-align:right" id="tax21">—</td><td style="text-align:right" id="net21">—</td><td id="note21">—</td></tr>
+        <tr id="row26"><td><span class="scenario-tag">26%</span> Cedolare maggiore</td><td style="text-align:right" id="tax26">—</td><td style="text-align:right" id="net26">—</td><td id="note26">—</td></tr>
+        <tr id="rowIrp"><td><span class="scenario-tag" style="background:#fef3c7;color:#92400e">IRPEF</span> Regime ordinario</td><td style="text-align:right" id="taxIrp">—</td><td style="text-align:right" id="netIrp">—</td><td id="noteIrp">—</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout ok" id="verdict">
+    <strong>Conclusione</strong>
+    <span id="verdictText">Compila i campi qui sopra per ricevere la raccomandazione.</span>
+  </div>
+
+  <h2>3. Note operative</h2>
+  <ul style="font-size:10.5pt">
+    <li>La cedolare secca <strong>esclude</strong> spese, ammortamenti e oneri deducibili: il calcolo è semplice ma poco flessibile.</li>
+    <li>L'IRPEF ordinaria permette di dedurre spese reali (utenze, pulizie, manutenzioni, ammortamento mobili). Conviene se hai molte spese o aliquota IRPEF bassa.</li>
+    <li>Dal 5° immobile scatta l'attività d'impresa: regime forfettario (5%/15%) o ordinario. Cambiano i versamenti INPS.</li>
+    <li>Le commissioni OTA (Airbnb, Booking) sono <strong>già detratte</strong> dal lordo che incassi; verifica sempre il "guadagno netto" nei report.</li>
+  </ul>
+
+  <div class="foot-note">
+    Stima indicativa. Non sostituisce la consulenza di un commercialista. Aliquote IRPEF aggiornate al 2025 (riforma 3 scaglioni).
+  </div>
+</section>
+
+<script>
+(function(){
+  var fmt = function(n){ return Math.round(n).toLocaleString('it-IT') + ' €'; };
+  function calc(){
+    var lordo = +document.getElementById('lordo').value || 0;
+    var nImm = +document.getElementById('nImm').value;
+    var irpef = +document.getElementById('irpef').value;
+    var ota = (+document.getElementById('ota').value || 0) / 100;
+    var spese = +document.getElementById('spese').value || 0;
+    var sogg = document.getElementById('sogg').value;
+
+    // Scorporo imposta di soggiorno se necessario
+    var base = sogg === 'si' ? lordo * 0.97 : lordo;
+    // Base imponibile cedolare = lordo - commissioni OTA
+    var baseImp = base * (1 - ota);
+
+    var t21 = baseImp * 0.21;
+    var n21 = baseImp - t21;
+    var t26 = baseImp * 0.26;
+    var n26 = baseImp - t26;
+    var baseIrpef = Math.max(0, baseImp - spese);
+    var tIrp = baseIrpef * irpef;
+    var nIrp = baseImp - tIrp;
+
+    document.getElementById('tax21').textContent = fmt(t21);
+    document.getElementById('net21').textContent = fmt(n21);
+    document.getElementById('tax26').textContent = fmt(t26);
+    document.getElementById('net26').textContent = fmt(n26);
+    document.getElementById('taxIrp').textContent = fmt(tIrp);
+    document.getElementById('netIrp').textContent = fmt(nIrp);
+
+    // Disponibilità del regime 21%
+    var allow21 = nImm === 1;
+    document.getElementById('note21').textContent = allow21 ? 'Disponibile per 1° immobile' : 'NON disponibile (>1 immobile)';
+    if (!allow21) { document.getElementById('row21').style.opacity = '.55'; }
+    else { document.getElementById('row21').style.opacity = '1'; }
+    document.getElementById('note26').textContent = nImm <= 4 ? 'Disponibile (1°-4° immobile)' : 'NON disponibile';
+    document.getElementById('noteIrp').textContent = 'Sempre disponibile; deduce spese';
+
+    // Determina vincitore
+    var opts = [];
+    if (allow21) opts.push({k:'21%',v:n21,r:'row21'});
+    if (nImm <= 4) opts.push({k:'26%',v:n26,r:'row26'});
+    opts.push({k:'IRPEF',v:nIrp,r:'rowIrp'});
+    var best = opts.reduce(function(a,b){ return b.v>a.v ? b : a; });
+
+    ['row21','row26','rowIrp'].forEach(function(id){
+      document.getElementById(id).classList.remove('winner');
+    });
+    document.getElementById(best.r).classList.add('winner');
+
+    document.getElementById('bestNet').textContent = fmt(best.v);
+    document.getElementById('verdictText').textContent =
+      'Sul tuo profilo conviene il regime ' + best.k +
+      '. Risparmi ' + fmt(best.v - Math.min.apply(null, opts.map(function(o){return o.v;}))) +
+      ' rispetto all\'opzione peggiore.';
+  }
+  ['lordo','nImm','irpef','ota','spese','sogg'].forEach(function(id){
+    document.getElementById(id).addEventListener('input', calc);
+    document.getElementById(id).addEventListener('change', calc);
+  });
+  calc();
+})();
+</script>
+
+</body>
+</html>
